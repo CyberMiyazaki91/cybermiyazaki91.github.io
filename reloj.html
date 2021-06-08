@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Reloj en JavaScript</title>
+		<script type="text/javascript">
+			function Ver_Hora() {
+			
+			var mihora = new Date();
+			var horas = mihora.getHours().toString();
+			var minutos = mihora.getMinutes().toString();
+			if (minutos.length==1) {
+				minutos="0" + minutos;
+			}
+			var segundos = mihora.getSeconds().toString();
+
+			document.forms[0].mireloj.value = horas + " : " + minutos + " : " + segundos;
+
+			}
+
+		</script>
+	</head>
+	<body bgcolor="hotpink">
+		<h1><center>Reloj en JavaScript</center></h1>
+		<div align="center">
+			<form>
+				<p align="center">
+					<h3><input type="text" size="100" name="mireloj"></h3>
+				</p>
+				<script type="text/javascript">
+					var r = setInterval ("Ver_Hora()",500);
+				</script>
+			</form>
+			<img src="Reloj.gif" height="250" width="250" alt="Reloj gif">
+		</div>
+		<a href="index.html">Volver</a>
+	</body>
+</html>
